@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Mail, FolderOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Animation1 from "./ui/animation";
+import { cursorTo } from "readline";
 
 export function HeroSection() {
 
@@ -59,15 +60,15 @@ useEffect(() => {
 
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <>
+   
+    <section className="container mx-auto px-4 py-9 md:py-24">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12  items-center">
         <div className="space-y-6">
-          <h1 className="text-[42px] leading-[50px] md:text-[72px] font-bold md:leading-[85px]">
-            I'm <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block">Abhishek R</span>, a Web Designer from{" "}
-            <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">
-            {displayedText} 
-           {showCursor && <span className="animate-pulse">|</span>}
-            </span>
+          <h1 className="text-[42px] leading-[50px] md:text-[72px] font-bold md:leading-[80px] ">
+            I'm <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block">Abhishek R</span> <br />{''}
+            {displayedText}
+            {showCursor}
           </h1>
 
           <p className="text-[#393939] text-[16px] md:text-[18px] font-medium leading-[28px] md:leading-[30px] max-w-xl">
@@ -75,18 +76,11 @@ useEffect(() => {
             nulla sed doler.
           </p>
 
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">
-            <Button className="bg-[#0B0B0B] text-white hover:bg-black/90 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
-              <Mail className="w-5 h-5" />
-              Get in touch
+          <div className="flex justify-center sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">
+            <Button className="bg-[#0B0B0B] text-white hover:bg-black rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
+              Get Started
             </Button>
-            <Button
-              variant="outline"
-              className="bg-white border-[3px] border-black hover:bg-gray-50 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]"
-            >
-              <FolderOpen className="w-5 h-5" />
-              View portfolio
-            </Button>
+            
           </div>
         </div>
 
@@ -101,6 +95,8 @@ useEffect(() => {
         </div>
       
       </div>
+
     </section>
+     </>
   )
 }

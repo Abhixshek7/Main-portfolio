@@ -1,3 +1,5 @@
+"use client";
+
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { LogoMarquee } from "@/components/logo-marquee"
@@ -11,17 +13,22 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#FFFFFF]">
+    <main className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
+       
       <LogoMarquee />
+     
+         <AboutSection />
       <ServicesSection />
-      <AboutSection />
+   
       <PortfolioSection />
       <ExperienceSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <ArticlesSection />
       <Footer />
+    
     </main>
+    
   )
 }
