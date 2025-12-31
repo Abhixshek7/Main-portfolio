@@ -115,6 +115,25 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+   border:black;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

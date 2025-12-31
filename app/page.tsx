@@ -7,28 +7,43 @@ import { ServicesSection } from "@/components/services-section"
 import { AboutSection } from "@/components/about-section"
 import { PortfolioSection } from "@/components/portfolio-section"
 import { ExperienceSection } from "@/components/experience-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { ArticlesSection } from "@/components/articles-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background pt-28">
+
       <Navigation />
-      <HeroSection />
-       
+
+      <section id="home">
+        <HeroSection />
+      </section>
+
       <LogoMarquee />
-     
-         <AboutSection />
-      <ServicesSection />
-   
-      <PortfolioSection />
-      <ExperienceSection />
-      {/* <TestimonialsSection /> */}
-      <ArticlesSection />
+
+      <section id="about">
+        <AboutSection />
+      </section>
+
+      <section id="services">
+        <ServicesSection />
+      </section>
+
+      <section id="portfolio">
+        <PortfolioSection />
+      </section>
+
+      <section id="experience">
+        <ExperienceSection />
+      </section>
+
+      <section id="articles">
+        <ArticlesSection />
+      </section>
+
       <Footer />
-    
+
     </main>
-    
   )
 }

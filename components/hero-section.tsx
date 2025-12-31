@@ -10,9 +10,10 @@ import { cursorTo } from "readline";
 export function HeroSection() {
 
   const texts = [
-  "Web Designer",
+  
   "Web Developer",
-  "Product Manager",
+  "UI Designer",
+  "Footballer",
 ];
 
 const [displayedText, setDisplayedText] = useState("");
@@ -63,9 +64,21 @@ useEffect(() => {
     <>
    
     <section className="container mx-auto px-4 py-9 md:py-24">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12  items-center">
-        <div className="space-y-6">
-          <h1 className="text-[42px] leading-[50px] md:text-[72px] font-bold md:leading-[80px] ">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      
+
+        <div className="flex justify-center md:justify-start">
+          <div className="relative w-full max-w-md aspect-square bg-[#FDB927] border-4 border-black rounded-3xl overflow-hidden hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 ">
+            <img
+              src="/images/design-mode/ProfileImg.png"
+              alt="Illustrated character avatar"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+          <div className="space-y-6">
+          <h1 className="text-[42px] text-rightleading-[50px] md:text-[72px] font-bold md:leading-[80px] ">
             I'm <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block">Abhishek R</span> <br />{''}
             {displayedText}
             {showCursor}
@@ -77,20 +90,10 @@ useEffect(() => {
           </p>
 
           <div className="flex justify-center sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">
-            <Button className="bg-[#0B0B0B] text-white hover:bg-black rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
+            <Button className="bg-foreground text-background rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
               Get Started
             </Button>
             
-          </div>
-        </div>
-
-        <div className="flex justify-center md:justify-end">
-          <div className="relative w-full max-w-md aspect-square bg-[#FDB927] border-4 border-black rounded-3xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <img
-              src="/images/design-mode/63407fbdc2d4ac5270385fd4_home-he.png"
-              alt="Illustrated character avatar"
-              className="w-full h-full object-cover"
-            />
           </div>
         </div>
       

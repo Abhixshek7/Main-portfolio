@@ -8,7 +8,7 @@ export function AboutSection() {
     <section className="container mx-auto px-4 py-16 md:py-32">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="flex justify-center">
-          <div className="relative w-full max-w-lg aspect-square border-[4px] border-black rounded-full overflow-hidden bg-[#FF6B6B] shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <div className="relative w-full max-w-lg aspect-square border-[4px] rounded-full overflow-hidden bg-[#FF6B6B] shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)]">
             <Image src="/images/about-me.svg" alt="About me illustration" fill className="object-cover" />
           </div>
         </div>
