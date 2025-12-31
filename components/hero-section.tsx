@@ -68,13 +68,28 @@ useEffect(() => {
       
 
         <div className="flex justify-center md:justify-start">
-          <div className="relative w-full max-w-md aspect-square bg-[#FDB927] border-4 border-black rounded-3xl overflow-hidden hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 ">
-            <img
-              src="/images/design-mode/ProfileImg.png"
-              alt="Illustrated character avatar"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <div
+  className="
+    relative w-full max-w-md aspect-square
+    bg-[#FDB927]
+    border-4 border-black dark:border-white
+    rounded-3xl overflow-hidden
+    shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
+    dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]
+    transition-all duration-300 ease-out
+
+    hover:-translate-y-[4px]
+    hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]
+    dark:hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)]
+  "
+>
+  <img
+    src="/images/design-mode/ProfileImg.png"
+    alt="Illustrated character avatar"
+    className="w-full h-full object-cover"
+  />
+</div>
+
         </div>
 
           <div className="space-y-6">

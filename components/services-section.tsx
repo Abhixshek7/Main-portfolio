@@ -32,7 +32,7 @@ export function ServicesSection() {
   ]
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-background/10 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">

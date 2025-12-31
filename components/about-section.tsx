@@ -7,11 +7,7 @@ export function AboutSection() {
   return (
     <section className="container mx-auto px-4 py-16 md:py-32">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <div className="flex justify-center">
-          <div className="relative w-full max-w-lg aspect-square border-[4px] rounded-full overflow-hidden bg-[#FF6B6B] shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <Image src="/images/about-me.svg" alt="About me illustration" fill className="object-cover" />
-          </div>
-        </div>
+        
 
         <div className="space-y-6 md:space-y-8">
           <div>
@@ -50,6 +46,30 @@ export function AboutSection() {
             <User className="w-5 h-5" />
             More about me
           </Button>
+        </div>
+         <div className="flex justify-center md:justify-end">
+          <div
+  className="
+    relative w-full max-w-md aspect-square
+    bg-[#FDB927]
+    border-4 border-black dark:border-white
+    rounded-3xl overflow-hidden
+    shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
+    dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]
+    transition-all duration-300 ease-out
+
+    hover:-translate-y-[4px]
+    hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]
+    dark:hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)]
+  "
+>
+  <img
+    src="/images/design-mode/Work.png"
+    alt="Illustrated character avatar"
+    className="w-full h-full object-cover"
+  />
+</div>
+
         </div>
       </div>
     </section>

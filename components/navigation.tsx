@@ -1,7 +1,14 @@
-import { Mail, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState,useRef } from "react"
 import { motion } from "framer-motion"
+import {
+  Home,
+  User,
+  Briefcase,
+  Grid,
+  Sun,
+  Moon
+} from "lucide-react"
 
 
 export function Navigation() {
@@ -34,17 +41,29 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll)
 }, [])
 
+const navItems = [
+  // Page links
+  { type: "link", href: "#home", label: "Home", icon: Home },
+  { type: "link", href: "#about", label: "About", icon: User },
+  { type: "link", href: "#services", label: "Services", icon: Briefcase },
+  { type: "link", href: "#portfolio", label: "Portfolio", icon: Grid },
+
+  // Actions
+  { type: "theme" },
+  
+]
+
+
+
   return (
     <>
-   
-
       {/* Actual navbar */}
       <motion.div
   initial={false}
   animate={visible ? "shown" : "hidden"}
   variants={{
     shown: { y: 0 },
-    hidden: { y: "-120%" },
+    hidden: { y: "-100%" },
   }}
   transition={{
     type: "spring",
@@ -56,48 +75,110 @@ useEffect(() => {
     fixed top-0 left-0 right-0
     z-50
     flex justify-center
-    px-4 pt-8 pb-6
- 
+    px-4 pt-8 pb-6"
+>
+
+       <nav
+  className="
+    pointer-events-auto
+    mx-auto max-w-4xl
+    flex items-center justify-between
+    bg-white dark:bg-black
+    border-4 border-black dark:border-white
+    rounded-xl
+    px-5 py-3
+    shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
+    dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]
   "
 >
-  
+  {/* Desktop */}
+<div className="hidden md:flex gap-6 items-center text-black dark:text-white">
+  {navItems.map((item, index) => {
+    if (item.type === "link") {
+      return (
+        <a
+          key={item.href}
+          href={item.href}
+          className="font-bold hover:opacity-70 transition"
+        >
+          {item.label}
+        </a>
+      )
+    }
 
-
-        <nav
+    if (item.type === "theme") {
+      return (
+        <button
+          key={`theme-${index}`}
+          onClick={() => setIsDark(!isDark)}
           className="
-            pointer-events-auto
-            mx-auto max-w-2xl
-            flex items-center justify-between
-            bg-white dark:bg-black
-            border-4 border-black dark:border-white
-            rounded-xl
-            px-5 py-3
-            shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
-            dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]
+            w-9 h-9
+            border-2 border-black dark:border-white
+            rounded-md
+            flex items-center justify-center
           "
         >
-          {/* Links */}
-          <div className="hidden md:flex gap-6 text-black dark:text-white">
-            <a href="#home" className="font-bold hover:opacity-70">Home</a>
-            <a href="#about" className="font-bold hover:opacity-70">About</a>
-            <a href="#services" className="font-bold hover:opacity-70">Services</a>
-            <a href="#portfolio" className="font-bold hover:opacity-70">Portfolio</a>
-          </div>
+          {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+        </button>
+      )
+    }
 
-          {/* Actions */}
-          <div className="flex gap-3">
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="w-10 h-10 border-2 border-black dark:border-white rounded-md"
-            >
-              {isDark ? <Sun /> : <Moon />}
-            </button>
+    return null
+  })}
+</div>
 
-            <Button className="h-12 px-5 rounded-sm">
-              <Mail />
-            </Button>
-          </div>
-        </nav>
+
+
+  {/* Mobile */}
+  <div className="flex md:hidden gap-4 items-center text-black dark:text-white">
+  {navItems.map((item, index) => {
+    if (item.type === "link") {
+      const Icon = item.icon
+      return (
+        <a
+          key={item.href}
+          href={item.href}
+          aria-label={item.label}
+          className="
+            w-10 h-10
+            flex items-center justify-center
+            border-2 border-black dark:border-white
+            rounded-md
+          "
+        >
+          <Icon className="w-5 h-5" />
+        </a>
+      )
+    }
+
+    if (item.type === "theme") {
+      return (
+        <button
+          key={`theme-${index}`}
+          onClick={() => setIsDark(!isDark)}
+          className="
+            w-10 h-10
+            flex items-center justify-center
+            border-2 border-black dark:border-white
+            rounded-md
+          "
+        >
+          {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
+      )
+    }
+
+    return null
+  })}
+</div>
+
+
+
+
+  
+
+</nav>
+
       
       </motion.div>
     </>
