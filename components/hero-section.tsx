@@ -9,9 +9,10 @@ import { cursorTo } from "readline";
 
 export function HeroSection() {
 
-  const texts = [
+ const texts = [
+  "Frontend Engineer",
   "UI Designer",
-  "Footballer",
+  "Software Engineer",
 ];
 
 const [displayedText, setDisplayedText] = useState(" ");
@@ -82,10 +83,10 @@ useEffect(() => {
           className="
             bg-[#2F81F7] text-white px-3 py-1
             inline-flex items-center
-            w-[12ch] md:w-[14ch]
+            w-[14ch] md:w-[14ch]
             whitespace-nowrap
             mx-auto md:mx-0
-            text-30px
+            text-30
           "
         >
           {displayedText}
@@ -104,7 +105,7 @@ useEffect(() => {
 
       </h1>
 
-      <p className="text-[#393939] text-[16px] md:text-[18px] font-medium leading-[28px] md:leading-[30px] max-w-xl mx-auto md:mx-0">
+      <p className="text-foreground/80 text-[16px] md:text-[18px] font-medium leading-[28px] md:leading-[30px] max-w-xl mx-auto md:mx-0">
         I design and develop end-to-end web solutions with a strong focus on
         modern frontend engineering backed by robust backend systems.
       </p>

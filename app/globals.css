@@ -119,16 +119,67 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===============================
+   Global Button Styles (Brutalist)
+   =============================== */
+
 button {
-  transition: all 0.3s ease;
+  /* Layout & interaction */
   cursor: pointer;
-   border:black;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+
+  /* Brutalist structure */
+  border: 3px solid black;
+  border-radius: 12px;
+
+  /* Light theme defaults */
+  background-color: #ffffff;
+  color: #000000;
+
+  /* Hard shadow */
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
 }
 
+/* Hover effect */
 button:hover {
   transform: translateY(-4px);
-  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
+
+/* Active (pressed) state */
+button:active {
+  transform: translateY(0);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Disabled state */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===============================
+   Dark Mode Overrides
+   =============================== */
+
+.dark button {
+  background-color: #000000;
+  color: #ffffff;
+
+  border-color: #ffffff;
+
+  box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 1);
+}
+
+.dark button:hover {
+  box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 1);
+}
+
+.dark button:active {
+  box-shadow: 3px 3px 0px 0px rgba(255, 255, 255, 1);
+}
+
 
 section {
   scroll-margin-top: 120px;
