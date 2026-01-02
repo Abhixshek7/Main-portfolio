@@ -8,10 +8,31 @@ import {
   Grid,
   Sun,
   Moon,
-  Icon
 } from "lucide-react"
 
+import type { LucideIcon } from "lucide-react"
 
+type NavItem =
+  | {
+      type: "link"
+      href: string
+      label: string
+      icon: LucideIcon
+    }
+  | {
+      type: "theme"
+    }
+
+    const navItems: NavItem[] = [
+  { type: "link", href: "#home", label: "Home", icon: Home },
+  { type: "link", href: "#about", label: "About", icon: User },
+  { type: "link", href: "#services", label: "Services", icon: Briefcase },
+  { type: "link", href: "#portfolio", label: "Portfolio", icon: Grid },
+  { type: "theme" },
+]
+
+
+  
 export function Navigation() {
   const [isDark, setIsDark] = useState(false)
 
@@ -42,55 +63,17 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll)
 }, [])
 
-const navItems = [
-  // Page links
-  { type: "link", href: "#home", label: "Home", icon: Home },
-  { type: "link", href: "#about", label: "About", icon: User },
-  { type: "link", href: "#services", label: "Services", icon: Briefcase },
-  { type: "link", href: "#portfolio", label: "Portfolio", icon: Grid },
-
-  // Actions
-  { type: "theme" },
-  
-]
-
-
-
-  return (
-    <>
-      {/* Actual navbar */}
-   <motion.div
-  initial={false}
-  animate={visible ? "shown" : "hidden"}
-  variants={{
+const variantsTop = {
   shown: { y: 0 },
-  hidden: {
-    y: window.innerWidth < 768 ? "100%" : "-100%",
-  },
-}}
-  transition={{
-    type: "spring",
-    stiffness: 300,
-    damping: 30,
-    mass: 0.8,
-  }}
-  className="
-    fixed
-    left-0 right-0
-    z-50
-    flex justify-center
+  hidden: { y: "-100%" },
+}
 
-    /* Mobile & Tablet → fixed bottom */
-    bottom-0 px-4 py-4
+const variantsBottom = {
+  shown: { y: 0 },
+  hidden: { y: "100%" },
+}
 
-    /* Desktop → fixed top */
-    md:top-0 md:bottom-auto
-    md:px-4 md:pt-8 md:pb-6
-  "
->
-
-
-
+const nav = (
        <nav
   className="
     pointer-events-auto
@@ -186,16 +169,57 @@ backdrop-blur-md
     return null
   })}
 </div>
-
-
-
-
-  
-
 </nav>
+)
 
-      
-      </motion.div>
+
+  return (
+    <>
+      {/* Actual navbar */}
+{/* Mobile & Tablet → bottom */}
+<motion.div
+  initial={false}
+  animate={visible ? "shown" : "hidden"}
+  variants={variantsBottom}
+  transition={{
+    type: "spring",
+    stiffness: 300,
+    damping: 30,
+    mass: 0.8,
+  }}
+  className="
+    fixed bottom-0 left-0 right-0
+    z-50
+    flex justify-center
+    px-4 py-4
+    md:hidden
+  "
+>
+  {nav}
+</motion.div>
+
+{/* Desktop → top */}
+<motion.div
+  initial={false}
+  animate={visible ? "shown" : "hidden"}
+  variants={variantsTop}
+  transition={{
+    type: "spring",
+    stiffness: 300,
+    damping: 30,
+    mass: 0.8,
+  }}
+  className="
+    fixed top-0 left-0 right-0
+    z-50
+    flex justify-center
+    px-4 pt-8 pb-6
+    hidden md:flex
+  "
+>
+  {nav}
+</motion.div>
+
     </>
   )
 }
