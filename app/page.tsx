@@ -26,6 +26,10 @@ export default function Home() {
         <AboutSection />
       </section>
 
+      <section id="experience">
+        <ExperienceSection />
+      </section>
+      
       <section id="services">
         <ServicesSection />
       </section>
@@ -34,9 +38,7 @@ export default function Home() {
         <PortfolioSection />
       </section>
 
-      <section id="experience">
-        <ExperienceSection />
-      </section>
+      
 
       <section id="articles">
         <ArticlesSection />
