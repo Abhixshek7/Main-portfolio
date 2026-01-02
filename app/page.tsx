@@ -12,7 +12,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background pt-24">
+    <main className="min-h-screen pt-16">
 
       <Navigation />
 

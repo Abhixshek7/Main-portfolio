@@ -7,7 +7,8 @@ import {
   Briefcase,
   Grid,
   Sun,
-  Moon
+  Moon,
+  Icon
 } from "lucide-react"
 
 
@@ -58,13 +59,15 @@ const navItems = [
   return (
     <>
       {/* Actual navbar */}
-      <motion.div
+   <motion.div
   initial={false}
   animate={visible ? "shown" : "hidden"}
   variants={{
-    shown: { y: 0 },
-    hidden: { y: "-100%" },
-  }}
+  shown: { y: 0 },
+  hidden: {
+    y: window.innerWidth < 768 ? "100%" : "-100%",
+  },
+}}
   transition={{
     type: "spring",
     stiffness: 300,
@@ -72,11 +75,21 @@ const navItems = [
     mass: 0.8,
   }}
   className="
-    fixed top-0 left-0 right-0
+    fixed
+    left-0 right-0
     z-50
     flex justify-center
-    px-4 pt-8 pb-6"
+
+    /* Mobile & Tablet → fixed bottom */
+    bottom-0 px-4 py-4
+
+    /* Desktop → fixed top */
+    md:top-0 md:bottom-auto
+    md:px-4 md:pt-8 md:pb-6
+  "
 >
+
+
 
        <nav
   className="
@@ -86,6 +99,8 @@ const navItems = [
     bg-white dark:bg-black
     border-4 border-black dark:border-white
     rounded-xl
+    rounded-full md:rounded-xl
+backdrop-blur-md
     px-5 py-3
     shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
     dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]

@@ -11,12 +11,12 @@ export function HeroSection() {
 
   const texts = [
   
-  "Web Developer",
+  "Full-Stack Developer",
   "UI Designer",
   "Footballer",
 ];
 
-const [displayedText, setDisplayedText] = useState("");
+const [displayedText, setDisplayedText] = useState(" ");
 const [textIndex, setTextIndex] = useState(0);
 const [charIndex, setCharIndex] = useState(0);
 const [isDeleting, setIsDeleting] = useState(false);
@@ -63,11 +63,11 @@ useEffect(() => {
   return (
     <>
    
-    <section className="container mx-auto px-4 py-9 md:py-24">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="container mx-auto px-4 py-5 md:py-24">
+      <div className="max-w-8xl mx-auto grid md:grid-cols-2 gap-16 items-center">
       
 
-        <div className="flex justify-center md:justify-start">
+        <div className="flex justify-center md:justify-items-center">
           <div
   className="
     relative w-full max-w-md aspect-square
@@ -92,16 +92,43 @@ useEffect(() => {
 
         </div>
 
-          <div className="space-y-6">
-          <h1 className="text-[42px] text-rightleading-[50px] md:text-[72px] font-bold md:leading-[80px] ">
-            I'm <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block">Abhishek R</span> <br />{''}
-            {displayedText}
-            {showCursor}
-          </h1>
+          <div className="space-y-6 max-w-4xl">
+          <h1 className="text-[42px] md:text-[60px] font-bold leading-[1.1] flex flex-col gap-3">
+  {/* Fixed name */}
+  <span className="inline-block">
+    I'm{" "}
+    <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block">
+      Abhishek R.
+    </span>
+  </span>
+
+  {/* Animated role */}
+  <span
+  className="
+    bg-[#2F81F7] text-white px-3 py-1 inline-block
+    min-w-[320px] md:min-w-[200px]
+    whitespace-nowrap
+  "
+>
+  {displayedText}
+  <span
+    className={`
+      inline-block
+      w-[1ch]
+      ml-1
+      transition-opacity duration-150
+      ${showCursor ? "opacity-100" : "opacity-0"}
+    `}
+  >
+    |
+  </span>
+</span>
+
+</h1>
+
 
           <p className="text-[#393939] text-[16px] md:text-[18px] font-medium leading-[28px] md:leading-[30px] max-w-xl">
-            Lacus, adipiscing lectus convallis purus aliquet cursus magnaol montes augue donec cras turpis ultrices
-            nulla sed doler.
+           I design and develop end-to-end web solutions with a strong focus on modern frontend engineering backed by robust backend systems
           </p>
 
           <div className="flex justify-center sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">
@@ -113,7 +140,7 @@ useEffect(() => {
         </div>
       
       </div>
-
+    {/* <Animation1 /> */}
     </section>
      </>
   )

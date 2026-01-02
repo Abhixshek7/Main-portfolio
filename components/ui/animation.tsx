@@ -51,7 +51,7 @@ const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;               
+  gap: 10px;               
   width: 60vh;
   height: 60vh ;
 }
@@ -587,7 +587,7 @@ const StyledWrapper = styled.div`
 
 export default Animation1;
 
-// import React from 'react';
+
 // import styled from 'styled-components';
 
 // const Loader = () => {

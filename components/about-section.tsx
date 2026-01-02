@@ -11,8 +11,8 @@ export function AboutSection() {
 
         <div className="space-y-6 md:space-y-8">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Who's behind all this <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">great work?</span>
+            <h2 className="text-3xl md:text-4xl align-center text-center lg:text-5xl font-bold mb-4">
+             <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">About me</span>
             </h2>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
               Eu pellentesque arcu ornare velit faucibus egestas gravida sed in purus enim molestie gravida imperdiet
